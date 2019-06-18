@@ -1,0 +1,42 @@
+{
+  "name": "js_api_homework",
+  "version": "1.0.0",
+  "description": "yulee lysenko homework",
+  "private": true,
+  "scripts": {
+    "test": "mocha --opts mocha.opts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yulee20/js_api_homework.git"
+  },
+  "keywords": [
+    "js",
+    "api",
+    "automation",
+    "test",
+    "course"
+  ],
+  "author": "Yuliya Lysenko <yuleelysenko.yl@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yulee20/js_api_homework/issues"
+  },
+  "homepage": "https://github.com/yulee20/js_api_homework#readme",
+  "dependencies": {
+    "@types/chai": "4.1.7",
+    "@types/faker": "4.1.5",
+    "@types/mocha": "5.2.7",
+    "@types/node": "^10.0.0",
+    "@types/request": "2.48.1",
+    "@types/request-promise-native": "1.0.16",
+    "frisby": "2.1.1",
+    "mocha": "6.1.4",
+    "ts-node": "8.3.0",
+    "typescript": "3.5.2",
+    "request": "2.88.0",
+    "request-promise-native": "1.0.7",
+    "chai": "4.2.0",
+    "faker": "4.1.0"
+  }
+}
