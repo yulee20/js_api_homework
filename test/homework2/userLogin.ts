@@ -10,7 +10,7 @@ describe ("User ", function(){
             "ip-5236.sunline.net.ua"
         );
         const userRegister = await new Request(
-            "http://ip-5236.sunline.net.ua:30020/users/register"
+            "http://localhost:38021/users/register"
         )
             .method("POST")
             .body({
@@ -19,23 +19,23 @@ describe ("User ", function(){
                 password: email
             })
             .send();
-        
+        // console.log(userRegister.body)
         const userLoginResp = await new Request(
-            "http://ip-5236.sunline.net.ua:30020/users/login"
+            "http://localhost:38021/users/login"
         )
             .method("POST")
             .body({
-                email: userRegister.body.email,
-                password: userRegister.body.email
+                email: email,
+                password: email
             })
             .send();
-
+        // console.log(userLoginResp.body)
         const userDetailsResp = await new Request(
-            "http://ip-5236.sunline.net.ua:30020/api/user"
+            "http://localhost:38021/api/user"
         )
             .auth(userLoginResp.body.token)
             .send();
-
+        // console.log(userDetailsResp.body)
         const usrDetails = userDetailsResp.body;
         expect(usrDetails, JSON.stringify(usrDetails))
             .to.be.an("object")
@@ -44,11 +44,13 @@ describe ("User ", function(){
                 "createdAt",
                 "emails",
                 "profile",
-                "username"
+                "username",
+                "authenticationMethod"
             );
 
         // console.log("USER", usrDetails);
         expect(usrDetails._id, usrDetails).to.be.a("string");
+        expect(usrDetails.authenticationMethod, usrDetails).to.be.a("string").that.is.equal("password");
         expect(usrDetails.profile, usrDetails)
             .to.be.an("object");
         expect(usrDetails.emails, usrDetails).to.be.an("array").that.is.not
@@ -66,7 +68,7 @@ describe ("User ", function(){
             "ip-5236.sunline.net.ua"
         );
         const userRegister = await new Request(
-            "http://ip-5236.sunline.net.ua:30020/users/register"
+            "http://localhost:38021/users/register"
         )
             .method("POST")
             .body({
@@ -77,33 +79,31 @@ describe ("User ", function(){
             .send();
         
         const userLoginResp = await new Request(
-            "http://ip-5236.sunline.net.ua:30020/users/login"
+            "http://localhost:38021/users/login"
         )
             .method("POST")
             .body({
-                email: userRegister.body.email,
-                password: userRegister.body.email
+                email: email,
+                password: email
             })
             .send();
 
         const userDetailsResp = await new Request(
-            "http://ip-5236.sunline.net.ua:30020/api/user"
+            "http://localhost:38021/api/user"
         )
             // .auth(userLoginResp.body.token)
             .send();
-
+        // console.log(userDetailsResp.body)
         expect(userDetailsResp.body).is.to.be.an('object')
             .that.has.keys("isClientSafe", "error", "reason", "message", "errorType", "statusCode");
         expect(userDetailsResp.body.statusCode).is.to.be.equal(401);
         expect(userDetailsResp.body).is.to.be.an('object')
             .that.is.not.empty;
-        expect(userDetailsResp.body._id).is.to.be.a('string')
-            .that.is.not.undefined;
     })
 
     it(" not logged in - info", async function(){
         const userDetailsResp = await new Request(
-            "http://ip-5236.sunline.net.ua:30020/api/user"
+            "http://localhost:38021/api/user"
         )
             // .auth(userLoginResp.body.token)
             .send();
@@ -113,8 +113,7 @@ describe ("User ", function(){
         expect(userDetailsResp.body.statusCode).is.to.be.equal(401);
         expect(userDetailsResp.body).is.to.be.an('object')
             .that.is.not.empty;
-        expect(userDetailsResp.body._id).is.to.be.a('string')
-            .that.is.not.undefined;
+        expect(userDetailsResp.body._id).to.be.undefined;
     })
 
 })

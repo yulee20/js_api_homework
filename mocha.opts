@@ -1,4 +1,4 @@
 --require ./setup.js
 --slow 2000
 --timeout 5000
-test/homework2/userLogin.ts
+test/homework2/*.ts
