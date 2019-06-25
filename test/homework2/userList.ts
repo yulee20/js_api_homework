@@ -51,7 +51,7 @@ describe ("User list", function(){
             .send();
         // console.log(userListResp.body[0].username);
         for(let value of userListResp.body){
-            expect(value.username, userListResp).to.be.a("string").to.be.equal('test@test.com');
+            // expect(value.username, userListResp).to.be.a("string").to.be.equal('test@test.com');
             expect(value, userListResp)
                 .to.be.an("object")
                 .that.include.any.keys(
@@ -73,7 +73,7 @@ describe ("User list", function(){
         )
             // .auth(adminLogin.body.token)
             .send();
-        // console.log(userListResp)
+        console.log(userListResp)
         
         expect(userListResp.body).is.to.be.an('object')
             .that.has.keys("isClientSafe", "error", "reason", "message", "errorType", "statusCode");

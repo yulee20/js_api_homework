@@ -37,6 +37,9 @@
     "request": "2.88.0",
     "request-promise-native": "1.0.7",
     "chai": "4.2.0",
-    "faker": "4.1.0"
+    "faker": "4.1.0",
+    "chai-json-schema-ajv": "^4.0.0",
+    "raml-1-parser": "^1.1.52",
+    "uri-templates": "^0.2.0"
   }
 }

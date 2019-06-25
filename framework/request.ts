@@ -24,7 +24,7 @@ export class Request {
      * POST, GET supported
      * @param method method name string
      */
-    public method(method: "POST" | "GET" | "DELETE"): Request {
+    public method(method: "POST" | "GET" | "DELETE" | "PUT"): Request {
         this.options.method = method;
         return this;
     }

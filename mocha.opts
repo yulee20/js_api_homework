@@ -1,4 +1,4 @@
 --require ./setup.js
 --slow 2000
 --timeout 5000
-test/homework2/*.ts
+test/homework4/createBoard.ts

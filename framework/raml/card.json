@@ -1,0 +1,78 @@
+{
+    "type": "object",
+    "properties": {
+        "_id": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "boardId": {
+            "type": "string"
+        },
+        "listId": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "userId": {
+            "type": "string"
+        },
+        "swimlaneId": {
+            "type": "string"
+        },
+        "sort": {
+            "type": "number",
+            "default": 1
+        },
+        "members": {
+            "type": "Array"
+        },
+        "archived": {
+            "type": "boolean",
+            "default": false
+        },
+        "parentId": {
+            "type": "string"
+        },
+        "coverId": {
+            "type": "string"
+        },
+        "createdAt": {
+            "type": "string"
+        },
+        "customFields": {
+            "type": "Array"
+        },
+        "dateLastActivity": {
+            "type": "string"
+        },
+        "requestedBy": {
+            "type": "string"
+        },
+        "assignedBy": {
+            "type": "string"
+        },
+        "labelIds": {
+            "type": "Array"
+        },
+        "spentTime": {
+            "type": "number",
+            "default": 0
+        },
+        "isOvertime": {
+            "type": "boolean",
+            "default": false
+        },
+        "subtaskSort": {
+            "type": "number"
+        },
+        "type": {
+            "type": "string"
+        },
+        "linkedId": {
+            "type": "string"
+        }
+    }
+}
