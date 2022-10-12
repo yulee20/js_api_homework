@@ -39,7 +39,7 @@
     "chai": "4.2.0",
     "faker": "4.1.0",
     "chai-json-schema-ajv": "^4.0.0",
-    "raml-1-parser": "^1.1.52",
+    "raml-1-parser": "^1.1.67",
     "uri-templates": "^0.2.0"
   }
 }
